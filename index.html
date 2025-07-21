@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>No Folder Fullstack App</title>
+</head>
+<body>
+  <h1>Frontend + Backend (No folders)</h1>
+  <p id="output">Loading...</p>
+
+  <script>
+    fetch("/api/hello")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("output").textContent = data.message;
+      })
+      .catch(() => {
+        document.getElementById("output").textContent = "API error";
+      });
+  </script>
+</body>
+</html>
